@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="p-5 bg-secondary text-white rounded shadow">
+  <h1 class="display-4">¡Bienvenido a la App de Productos!</h1>
+  <p class="lead">Haz clic en el botón para ver todos los productos disponibles.</p>
+  <a href="{{ url_for('lista_productos') }}" class="btn btn-success btn-lg">Ver Productos</a>
+</div>
+{% endblock %}
