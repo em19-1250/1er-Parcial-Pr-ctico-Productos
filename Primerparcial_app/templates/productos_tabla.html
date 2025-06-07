@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center mb-4">
+  <h1 class="mb-3">Lista de Productos en Vista Tabla</h1>
+  <p class="lead">Aquí puedes ver todos los productos organizados tipo Excel.</p>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-striped shadow-sm">
+    <thead class="table-success text-center text-dark">
+      <tr style="background-color: #d4af37;"> <!-- Dorado -->
+        <th>ID</th>
+        <th>Nombre del Producto</th>
+        <th>Precio</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for producto in productos %}
+      <tr class="text-center align-middle">
+        <td>{{ producto.id }}</td>
+        <td>{{ producto.nombre_producto }}</td>
+        <td>${{ producto.precio }}</td>
+        <td>
+          <a href="{{ url_for('detalle_producto', id=producto.id) }}" class="btn btn-success btn-sm">
+            Ver Detalles
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
